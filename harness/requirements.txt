@@ -1,0 +1,2 @@
+# Dependências Python do harness
+litellm[proxy]==1.82.0

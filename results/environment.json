@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-13T21:20:28.737642+00:00",
+  "hardware": {
+    "cpu": "Intel Core i7-10700KF",
+    "motherboard": "Asus Prime H510M-K",
+    "ram": "DDR4 32 GB Corsair",
+    "gpu": "Nvidia RTX 3070"
+  },
+  "host": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.13.5",
+    "node_version": "v22.14.0",
+    "docker_version": "29.7.2"
+  },
+  "container": {
+    "base_image": "python:3.12-slim",
+    "python_version": "3.12.15",
+    "node_version": "20.x (nodesource setup_20.x)"
+  },
+  "harnesses": {
+    "claude_code": {
+      "package": "@anthropic-ai/claude-code",
+      "version": "2.1.296",
+      "version_note": "latest no npm em 2026-10-13 (lançado 2026-10-09)"
+    },
+    "opencode": {
+      "package": "opencode-ai",
+      "version": "1.19.0",
+      "version_note": "latest no GitHub em 2026-10-13 (lançado 2026-10-11)"
+    },
+    "codex_cli": {
+      "package": "@openai/codex",
+      "version": "0.162.1",
+      "version_note": "capturado em harness.log"
+    }
+  },
+  "model": "gpt-6.1-sol",
+  "proxy": "LiteLLM (sem versão pinada no Dockerfile) → Azure AI Foundry"
+}

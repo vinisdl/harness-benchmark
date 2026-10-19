@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  background: #101114;
+  color: #ececf1;
+}
+button,
+textarea {
+  font: inherit;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+button:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #a3e635;
+  outline-offset: 4px;
+}
+::selection {
+  background: #365314;
+  color: white;
+}

@@ -1,0 +1,11 @@
+node_modules
+.next
+coverage
+data
+test-db-*
+.git
+.env*
+*.log
+*.db*
+*.tsbuildinfo
+opencode.json

@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    # Host networking keeps the mandated localhost LiteLLM endpoint reachable.
+    network_mode: host
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Set OPENAI_API_KEY in your shell}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-6.1-sol}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-32000}
+    volumes:
+      - chat-data:/app/data
+    restart: unless-stopped
+volumes:
+  chat-data:

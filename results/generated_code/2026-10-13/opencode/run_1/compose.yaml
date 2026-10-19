@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    # Host networking preserves the mandated localhost LiteLLM endpoint.
+    network_mode: host
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Export OPENAI_API_KEY in your shell before starting compose}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-6.1-sol}
+      TOKEN_BUDGET: ${TOKEN_BUDGET:-32000}
+      HISTORY_MAX_MESSAGES: ${HISTORY_MAX_MESSAGES:-40}
+      HISTORY_MAX_BYTES: ${HISTORY_MAX_BYTES:-65536}
+      CONVERSATION_TTL_SECONDS: ${CONVERSATION_TTL_SECONDS:-86400}
+      MAX_CONVERSATIONS: ${MAX_CONVERSATIONS:-500}
+      DATABASE_PATH: /app/data/chat.db
+    volumes:
+      - chat-data:/app/data
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  chat-data:

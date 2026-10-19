@@ -1,0 +1,7 @@
+model = "gpt-6.1-sol"
+model_provider = "litellm"
+
+[model_providers.litellm]
+name = "litellm"
+base_url = "http://localhost:4000"
+env_key = "OPENAI_API_KEY"
